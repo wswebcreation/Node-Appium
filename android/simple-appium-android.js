@@ -7,10 +7,12 @@ var wd = require('wd'),
         platformName: 'Android',
         name: 'Sample Test',
         app: 'http://appium.s3.amazonaws.com/ContactManager.apk'
-    };
+    },
+    driver = wd.remote("ondemand.saucelabs.com", 80, "YOUR_SAUCE_USERNAME", "YOUR_SAUCE_ACCESS_KEY");
 
-browser = wd.remote("ondemand.saucelabs.com", 80, "YOUR_SAUCE_USERNAME", "YOUR_SAUCE_ACCESS_KEY");
-
-browser.init(desiredCaps, function() {
-    browser.quit();
+driver.init(desiredCaps, function(error) {
+    if (error) {
+        throw new Error('Session did not start properly. Please make sure you sauce credentials are correct');
+    }
+    driver.quit();
 });
