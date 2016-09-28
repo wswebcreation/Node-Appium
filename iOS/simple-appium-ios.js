@@ -8,7 +8,7 @@ var wd = require('wd'),
         name: 'Sample Test',
         app: 'https://s3.amazonaws.com/appium/TestApp8.4.app.zip'
     },
-    driver = wd.remote("ondemand.saucelabs.com", 80, "YOUR_SAUCE_USERNAME", "YOUR_SAUCE_ACCESS_KEY");
+    driver = wd.remote("https://" + "YOUR_SAUCE_USERNAME" + ":" + "YOUR_SAUCE_ACCESS_KEY" + "@" + "ondemand.saucelabs.com:443/wd/hub");
 
 driver.init(desiredCaps, function(error) {
     if (error) {
