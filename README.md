@@ -1,5 +1,5 @@
 > **NOTE:<br/>**
-> This project is no longer maintained by Sauce Labs
+> This project is no longer maintained
 
 # Node-Appium
 
